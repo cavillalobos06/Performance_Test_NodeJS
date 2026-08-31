@@ -106,7 +106,7 @@ Unlike a traditional script-based seeder, this project requires populating the d
 ```json
 {
   “users”: [{ “name”: “...”, “email”: “...”, “password”: “...”, ‘role’: “ADMINISTRATOR” }],
-  “clinics”: [{ ‘name’: “...”, “tax ID”: “...”, “manager”: “...”, “phone”: “...”, ‘address’: “...” }],
+  “clinics”: [{ ‘name’: “...”, “nit”: “...”, “manager”: “...”, “phone”: “...”, ‘address’: “...” }],
   “warehouses”: [{ “name”: “...”, ‘location’: “...” }],
   “medications”: [{ “name”: “...”, ‘description’: “...” }],
   “inventory”: [{ “warehouseName”: “...”, ‘medicationName’: “...”, “availableQuantity”: 100 }]
