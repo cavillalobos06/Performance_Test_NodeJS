@@ -4,11 +4,11 @@ A REST API for managing the lifecycle of medication supply requests between clin
 
 ## Developer Name
 
-_(enter your name here)_
+### Camilo Andrés Villalobos Ruiz
 
 ## Clan
 
-_(enter your clan here)_
+### Node.Js | NestJS
 
 ## Technologies Used
 
@@ -95,7 +95,7 @@ Unlike a traditional script-based seeder, this project requires populating the d
 1. Start the server (`npm run dev`).
 2. Go to `http://localhost:3000/api-docs` and make a `POST` request to `/seed/cargar`, or use `curl`:
    ```bash
-   curl -X POST http://localhost:3000/api/seed/cargar \
+   curl -X POST http://localhost:3000/api/seed/upload \
      -F “archivo=@seed-data-example.json”
    ```
 3. The `seed-data-example.json` file (included in the project root) already contains sample users, clinics, warehouses, medications, and inventory.
@@ -158,22 +158,23 @@ main
  └── develop
       ├── feature/project-setup
       ├── feature/models
-      ├── feat/middlewares
-      ├── feature/users
-      ├── feature/requests
-      └── feature/seeders-swagger
+      ├── feature/authentication
+      ├── feature/core-logic
+      ├── feature/server-setup
+      └── feature/documentation-swagger
 ```
 
 ## Conventional Commits
 
 ```
-feat: create user model with role field
-feat: implement JWT authentication and login
-feat: implement clinic CRUD with NIT uniqueness validation
-feat: implement warehouse and medication CRUD
-feat: implement request creation with inventory validation
-feat: implement request state transition rules
-feat: implement JSON seeder endpoint with Multer
-docs: add Swagger documentation for all endpoints
-docs: write project README
+chore: init express app, server and postgres database connection
+feat:  define initial  database models
+feat(middlewares)/: add custom middlewares and request validators
+feat(repositories): implement base database queries
+feat(core): add business logic layer for all main modules
+feat(api): add controllers for all core system modules
+feat(router): configure global API routes mapping
+chore(server): setup application entry point and server configuration
+feat(database): add seeders for initial medications, warehouses, and users
+docs: add README
 ```

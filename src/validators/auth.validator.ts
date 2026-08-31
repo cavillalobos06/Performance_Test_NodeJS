@@ -11,7 +11,7 @@ export const registroValidator = [
     .withMessage('La contraseña debe tener minimo 6 caracteres'),
   body('role')
     .isIn(['ADMINISTRADOR', 'GESTOR_SOLICITUDES'])
-    .withMessage('El rol debe ser ADMINISTRADOR o GESTOR_SOLICITUDES'),
+    .withMessage('El rol debe ser ADMINISTRATOR o REQUEST_MANAGER'),
 ];
 
 export const loginValidator = [
