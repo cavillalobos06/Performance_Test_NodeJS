@@ -10,7 +10,7 @@ const router = Router();
 
 /**
  * @swagger
- * /auth/registro:
+ * /auth/register:
  *   post:
  *     summary: Registra un usuario (Administrador o Gestor). Endpoint sin restriccion de JWT.
  *     tags: [Auth]

@@ -1,3 +1,8 @@
+/**
+ * Punto de entrada de la aplicacion.
+ * Crea la base de datos si no existe, sincroniza los modelos
+ * y levanta el servidor HTTP.
+ */
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -10,14 +15,16 @@ const PORT = process.env.PORT || 3000;
 async function start() {
   try {
     await ensureDatabaseExists();
+
     await sequelize.authenticate();
-    console.log('Conexión a postgres exitosa');
+    console.log('Conexion a PostgreSQL exitosa');
 
     await sequelize.sync();
     console.log('Modelos sincronizados con la base de datos');
 
     app.listen(PORT, () => {
       console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      console.log(`Documentacion Swagger en http://localhost:${PORT}/api-docs`);
     });
   } catch (error) {
     console.error('No se pudo iniciar el servidor:', error);

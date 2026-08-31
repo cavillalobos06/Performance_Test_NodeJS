@@ -14,7 +14,7 @@ const router = Router();
  * @swagger
  * components:
  *   schemas:
- *     Clinica:
+ *     Clinic:
  *       type: object
  *       properties:
  *         nombre: { type: string, example: "Clinica San Rafael" }
@@ -26,7 +26,7 @@ const router = Router();
 
 /**
  * @swagger
- * /clinicas:
+ * /clinics:
  *   post:
  *     summary: Crea una clinica (solo ADMINISTRADOR)
  *     tags: [Clinicas]
@@ -66,7 +66,7 @@ router.get(
 
 /**
  * @swagger
- * /clinicas/{id}:
+ * /clinics/{id}:
  *   get:
  *     summary: Obtiene una clinica por id (solo ADMINISTRADOR)
  *     tags: [Clinicas]

@@ -14,7 +14,7 @@ const router = Router();
  * @swagger
  * components:
  *   schemas:
- *     Medicamento:
+ *     Medication:
  *       type: object
  *       properties:
  *         nombre: { type: string, example: "Acetaminofen 500mg" }
@@ -23,7 +23,7 @@ const router = Router();
 
 /**
  * @swagger
- * /medicamentos:
+ * /medications:
  *   post:
  *     summary: Crea un medicamento (solo ADMINISTRATOR)
  *     tags: [Medicamentos]
@@ -62,7 +62,7 @@ router.get(
 
 /**
  * @swagger
- * /medicamentos/{id}:
+ * /medications/{id}:
  *   get:
  *     summary: Obtiene un medicamento por id (solo ADMINISTRATOR)
  *     tags: [Medicamentos]

@@ -14,7 +14,7 @@ const router = Router();
  * @swagger
  * components:
  *   schemas:
- *     Almacen:
+ *     Warehouse:
  *       type: object
  *       properties:
  *         nombre: { type: string, example: "Almacen Central" }
@@ -23,7 +23,7 @@ const router = Router();
 
 /**
  * @swagger
- * /almacenes:
+ * /warehouses:
  *   post:
  *     summary: Crea un almacen (solo ADMINISTRADOR)
  *     tags: [Almacenes]
@@ -62,7 +62,7 @@ router.get(
 
 /**
  * @swagger
- * /almacenes/{id}:
+ * /warehouses/{id}:
  *   get:
  *     summary: Obtiene un almacen por id (solo ADMINISTRADOR)
  *     tags: [Almacenes]

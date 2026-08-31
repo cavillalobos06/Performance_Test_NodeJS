@@ -14,7 +14,7 @@ const router = Router();
  * @swagger
  * components:
  *   schemas:
- *     Solicitud:
+ *     Request:
  *       type: object
  *       properties:
  *         clinicaId: { type: integer, example: 1 }
@@ -25,7 +25,7 @@ const router = Router();
 
 /**
  * @swagger
- * /solicitudes:
+ * /requests:
  *   post:
  *     summary: Crea una solicitud de abastecimiento (ADMINISTRATOR o GESTOR_SOLICITUDES)
  *     tags: [Solicitudes]
@@ -66,7 +66,7 @@ router.get(
 
 /**
  * @swagger
- * /solicitudes/activas:
+ * /requests/actives:
  *   get:
  *     summary: Lista las solicitudes activas (cualquier usuario autenticado)
  *     tags: [Solicitudes]
@@ -79,7 +79,7 @@ router.get('/activas', authMiddleware, requestController.listarActivas);
 
 /**
  * @swagger
- * /solicitudes/historial/{clinicaId}:
+ * /requests/history/{clinicId}:
  *   get:
  *     summary: Consulta el historial de solicitudes de una clinica (cualquier usuario autenticado)
  *     tags: [Solicitudes]
@@ -94,14 +94,14 @@ router.get('/activas', authMiddleware, requestController.listarActivas);
  *       200: { description: Historial de solicitudes de la clinica }
  */
 router.get(
-  '/historial/:clinicaId',
+  '/history/:clinicId',
   authMiddleware,
   requestController.historialPorClinica,
 );
 
 /**
  * @swagger
- * /solicitudes/{id}:
+ * /requests/{id}:
  *   get:
  *     summary: Obtiene una solicitud por id (solo ADMINISTRATOR)
  *     tags: [Solicitudes]
@@ -142,7 +142,7 @@ router.delete(
 
 /**
  * @swagger
- * /solicitudes/{id}/estado:
+ * /requests/{id}/status:
  *   put:
  *     summary: Actualiza el estado de una solicitud (ADMINISTRATOR o GESTOR_SOLICITUDES)
  *     tags: [Solicitudes]
@@ -166,7 +166,7 @@ router.delete(
  *       400: { description: Transicion de estado no permitida }
  */
 router.put(
-  '/:id/estado',
+  '/:id/status',
   authMiddleware,
   authorize('ADMINISTRATOR', 'REQUEST_MANAGER'),
   actualizarEstadoSolicitudValidator,
