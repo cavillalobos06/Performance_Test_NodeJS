@@ -26,7 +26,7 @@ const router = Router();
  * /medications:
  *   post:
  *     summary: Crea un medicamento (solo ADMINISTRATOR)
- *     tags: [Medicamentos]
+ *     tags: [Medications]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -39,7 +39,7 @@ const router = Router();
  *       201: { description: Medicamento creado }
  *   get:
  *     summary: Lista todos los medicamentos activos (solo ADMINISTRATOR)
- *     tags: [Medicamentos]
+ *     tags: [Medications]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -65,7 +65,7 @@ router.get(
  * /medications/{id}:
  *   get:
  *     summary: Obtiene un medicamento por id (solo ADMINISTRATOR)
- *     tags: [Medicamentos]
+ *     tags: [Medications]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -77,7 +77,7 @@ router.get(
  *       200: { description: Medicamento encontrado }
  *   put:
  *     summary: Actualiza un medicamento (solo ADMINISTRATOR)
- *     tags: [Medicamentos]
+ *     tags: [Medications]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -94,7 +94,7 @@ router.get(
  *       200: { description: Medicamento actualizado }
  *   delete:
  *     summary: Elimina logicamente un medicamento (solo ADMINISTRATOR)
- *     tags: [Medicamentos]
+ *     tags: [Medications]
  *     security:
  *       - bearerAuth: []
  *     parameters:

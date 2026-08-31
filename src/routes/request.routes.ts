@@ -28,7 +28,7 @@ const router = Router();
  * /requests:
  *   post:
  *     summary: Crea una solicitud de abastecimiento (ADMINISTRATOR o GESTOR_SOLICITUDES)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -43,7 +43,7 @@ const router = Router();
  *       404: { description: Clinica, medicamento o almacen no existe }
  *   get:
  *     summary: Lista todas las solicitudes (solo ADMINISTRATOR)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -69,7 +69,7 @@ router.get(
  * /requests/actives:
  *   get:
  *     summary: Lista las solicitudes activas (cualquier usuario autenticado)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -82,7 +82,7 @@ router.get('/activas', authMiddleware, requestController.listarActivas);
  * /requests/history/{clinicId}:
  *   get:
  *     summary: Consulta el historial de solicitudes de una clinica (cualquier usuario autenticado)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -104,7 +104,7 @@ router.get(
  * /requests/{id}:
  *   get:
  *     summary: Obtiene una solicitud por id (solo ADMINISTRATOR)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -116,7 +116,7 @@ router.get(
  *       200: { description: Solicitud encontrada }
  *   delete:
  *     summary: Elimina logicamente una solicitud (solo ADMINISTRATOR)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -145,7 +145,7 @@ router.delete(
  * /requests/{id}/status:
  *   put:
  *     summary: Actualiza el estado de una solicitud (ADMINISTRATOR o GESTOR_SOLICITUDES)
- *     tags: [Solicitudes]
+ *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
  *     parameters:

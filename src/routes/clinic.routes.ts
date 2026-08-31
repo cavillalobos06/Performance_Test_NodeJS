@@ -29,7 +29,7 @@ const router = Router();
  * /clinics:
  *   post:
  *     summary: Crea una clinica (solo ADMINISTRADOR)
- *     tags: [Clinicas]
+ *     tags: [Clinics]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -43,7 +43,7 @@ const router = Router();
  *       409: { description: NIT duplicado }
  *   get:
  *     summary: Lista todas las clinicas activas (solo ADMINISTRADOR)
- *     tags: [Clinicas]
+ *     tags: [Clinics]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -69,7 +69,7 @@ router.get(
  * /clinics/{id}:
  *   get:
  *     summary: Obtiene una clinica por id (solo ADMINISTRADOR)
- *     tags: [Clinicas]
+ *     tags: [Clinics]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -82,7 +82,7 @@ router.get(
  *       404: { description: Clinica no encontrada }
  *   put:
  *     summary: Actualiza una clinica (solo ADMINISTRADOR)
- *     tags: [Clinicas]
+ *     tags: [Clinics]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -99,7 +99,7 @@ router.get(
  *       200: { description: Clinica actualizada }
  *   delete:
  *     summary: Elimina logicamente una clinica (solo ADMINISTRADOR)
- *     tags: [Clinicas]
+ *     tags: [Clinics]
  *     security:
  *       - bearerAuth: []
  *     parameters:

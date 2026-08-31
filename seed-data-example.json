@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "name": "Admin Principal",
+      "email": "admin@riwimedicare.com",
+      "password": "admin123",
+      "role": "ADMINISTRATOR"
+    },
+    {
+      "name": "Gestor Demo",
+      "email": "gestor@riwimedicare.com",
+      "password": "gestor123",
+      "role": "REQUEST_MANAGER"
+    }
+  ],
+  "clinics": [
+    {
+      "nombre": "Clinica San Rafael",
+      "nit": "900123456-1",
+      "responsable": "Dr. Carlos Ramirez",
+      "telefono": "3001234567",
+      "direccion": "Calle 45 # 12-30"
+    },
+    {
+      "nombre": "Centro de Salud Norte",
+      "nit": "900987654-2",
+      "responsable": "Dra. Laura Gomez",
+      "telefono": "3009876543",
+      "direccion": "Carrera 10 # 80-15"
+    }
+  ],
+  "warehouses": [
+    {
+      "nombre": "Almacen Central",
+      "ubicacion": "Bogota, Zona Industrial"
+    },
+    {
+      "nombre": "Almacen Norte",
+      "ubicacion": "Bogota, Zona Norte"
+    }
+  ],
+  "medications": [
+    {
+      "nombre": "Acetaminofen 500mg",
+      "descripcion": "Analgesico y antipiretico"
+    },
+    {
+      "nombre": "Ibuprofeno 400mg",
+      "descripcion": "Antiinflamatorio no esteroideo"
+    },
+    {
+      "nombre": "Amoxicilina 500mg",
+      "descripcion": "Antibiotico de amplio espectro"
+    }
+  ],
+  "inventory": [
+    {
+      "almacenNombre": "Almacen Central",
+      "medicamentoNombre": "Acetaminofen 500mg",
+      "cantidadDisponible": 500
+    },
+    {
+      "almacenNombre": "Almacen Central",
+      "medicamentoNombre": "Ibuprofeno 400mg",
+      "cantidadDisponible": 300
+    },
+    {
+      "almacenNombre": "Almacen Norte",
+      "medicamentoNombre": "Amoxicilina 500mg",
+      "cantidadDisponible": 150
+    }
+  ]
+}

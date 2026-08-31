@@ -26,7 +26,7 @@ const router = Router();
  * /warehouses:
  *   post:
  *     summary: Crea un almacen (solo ADMINISTRADOR)
- *     tags: [Almacenes]
+ *     tags: [Warehouses]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -39,7 +39,7 @@ const router = Router();
  *       201: { description: Almacen creado }
  *   get:
  *     summary: Lista todos los almacenes activos (solo ADMINISTRADOR)
- *     tags: [Almacenes]
+ *     tags: [Warehouses]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -65,7 +65,7 @@ router.get(
  * /warehouses/{id}:
  *   get:
  *     summary: Obtiene un almacen por id (solo ADMINISTRADOR)
- *     tags: [Almacenes]
+ *     tags: [Warehouses]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -77,7 +77,7 @@ router.get(
  *       200: { description: Almacen encontrado }
  *   put:
  *     summary: Actualiza un almacen (solo ADMINISTRADOR)
- *     tags: [Almacenes]
+ *     tags: [Warehouses]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -94,7 +94,7 @@ router.get(
  *       200: { description: Almacen actualizado }
  *   delete:
  *     summary: Elimina logicamente un almacen (solo ADMINISTRADOR)
- *     tags: [Almacenes]
+ *     tags: [Warehouses]
  *     security:
  *       - bearerAuth: []
  *     parameters:
