@@ -38,8 +38,8 @@ User.init(
     email: { type: DataTypes.STRING, allowNull: false, unique: true },
     password: { type: DataTypes.STRING, allowNull: false },
     role: {
-      type: DataTypes.ENUM('ADMIN', 'REQUEST_MANAGER'),
-      allowNull: false
+      type: DataTypes.ENUM('ADMINISTRATOR', 'REQUEST_MANAGER'),
+      allowNull: false,
     },
   },
   { sequelize, tableName: 'users', timestamps: true },

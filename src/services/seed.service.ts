@@ -44,10 +44,15 @@ interface SeedInventory {
 
 interface SeedData {
   usuarios?: SeedUser[];
+  users?: SeedUser[];
   clinicas?: SeedClinic[];
+  clinics?: SeedClinic[];
   almacenes?: SeedWarehouse[];
+  warehouses?: SeedWarehouse[];
   medicamentos?: SeedMedication[];
+  medications?: SeedMedication[];
   inventario?: SeedInventory[];
+  inventory?: SeedInventory[];
 }
 
 interface ResumenSeed {
@@ -85,7 +90,8 @@ async function poblarBaseDeDatos(buffer: Buffer): Promise<ResumenSeed> {
     inventarioCreado: 0,
   };
 
-  for (const usuario of data.usuarios ?? []) {
+  const usuarios = data.usuarios ?? data.users ?? [];
+  for (const usuario of usuarios) {
     const passwordHasheada = await bcrypt.hash(usuario.password, 10);
     const [, creado] = await User.findOrCreate({
       where: { email: usuario.email },
@@ -94,7 +100,8 @@ async function poblarBaseDeDatos(buffer: Buffer): Promise<ResumenSeed> {
     if (creado) resumen.usuariosCreados++;
   }
 
-  for (const clinica of data.clinicas ?? []) {
+  const clinicas = data.clinicas ?? data.clinics ?? [];
+  for (const clinica of clinicas) {
     const [, creado] = await Clinic.findOrCreate({
       where: { nit: clinica.nit },
       defaults: clinica,
@@ -102,7 +109,8 @@ async function poblarBaseDeDatos(buffer: Buffer): Promise<ResumenSeed> {
     if (creado) resumen.clinicasCreadas++;
   }
 
-  for (const almacen of data.almacenes ?? []) {
+  const almacenes = data.almacenes ?? data.warehouses ?? [];
+  for (const almacen of almacenes) {
     const [, creado] = await Warehouse.findOrCreate({
       where: { nombre: almacen.nombre },
       defaults: almacen,
@@ -110,7 +118,8 @@ async function poblarBaseDeDatos(buffer: Buffer): Promise<ResumenSeed> {
     if (creado) resumen.almacenesCreados++;
   }
 
-  for (const medicamento of data.medicamentos ?? []) {
+  const medicamentos = data.medicamentos ?? data.medications ?? [];
+  for (const medicamento of medicamentos) {
     const [, creado] = await Medication.findOrCreate({
       where: { nombre: medicamento.nombre },
       defaults: medicamento,
@@ -118,7 +127,8 @@ async function poblarBaseDeDatos(buffer: Buffer): Promise<ResumenSeed> {
     if (creado) resumen.medicamentosCreados++;
   }
 
-  for (const item of data.inventario ?? []) {
+  const inventario = data.inventario ?? data.inventory ?? [];
+  for (const item of inventario) {
     const almacen = await Warehouse.findOne({
       where: { nombre: item.almacenNombre },
     });
