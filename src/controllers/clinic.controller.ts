@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import clinicaService from '../services/clinic.service.js';
+import clinicService from '../services/clinic.service.js';
 
 export async function crear(
   req: Request,
@@ -7,7 +7,7 @@ export async function crear(
   next: NextFunction,
 ): Promise<void> {
   try {
-    res.status(201).json(await clinicaService.crearClinica(req.body));
+    res.status(201).json(await clinicService.crearClinica(req.body));
   } catch (error) {
     next(error);
   }
@@ -19,7 +19,7 @@ export async function listar(
   next: NextFunction,
 ): Promise<void> {
   try {
-    res.json(await clinicaService.listClinics());
+    res.json(await clinicService.listClinics());
   } catch (error) {
     next(error);
   }
@@ -31,7 +31,7 @@ export async function obtener(
   next: NextFunction,
 ): Promise<void> {
   try {
-    res.json(await clinicaService.getClinic(Number(req.params.id)));
+    res.json(await clinicService.getClinic(Number(req.params.id)));
   } catch (error) {
     next(error);
   }
@@ -44,7 +44,7 @@ export async function actualizar(
 ): Promise<void> {
   try {
     res.json(
-      await clinicaService.updateClinic(Number(req.params.id), req.body),
+      await clinicService.updateClinic(Number(req.params.id), req.body),
     );
   } catch (error) {
     next(error);
@@ -57,7 +57,7 @@ export async function eliminar(
   next: NextFunction,
 ): Promise<void> {
   try {
-    await clinicaService.deleteClinic(Number(req.params.id));
+    await clinicService.deleteClinic(Number(req.params.id));
     res.status(204).send();
   } catch (error) {
     next(error);
