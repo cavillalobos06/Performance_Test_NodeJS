@@ -1,13 +1,13 @@
 /**
  * Repositorio de Solicitud.
  */
-import Solicitud, { RequestStatus } from '../models/request.model.js';
-import Clinica from '../models/clinic.model.js';
-import Medicamento from '../models/medication.model.js';
-import Almacen from '../models/warehouse.model.js';
+import Request, { RequestStatus } from '../models/request.model.js';
+import Clinic from '../models/clinic.model.js';
+import Medication from '../models/medication.model.js';
+import Warehouse from '../models/warehouse.model.js';
 import User from '../models/user.model.js';
 
-interface SolicitudData {
+interface RequestData {
   clinicaId: number;
   medicamentoId: number;
   almacenId: number;
@@ -16,38 +16,38 @@ interface SolicitudData {
 }
 
 const includeRelations = [
-  { model: Clinica, as: 'clinica', attributes: ['id', 'nombre', 'nit'] },
-  { model: Medicamento, as: 'medicamento', attributes: ['id', 'nombre'] },
-  { model: Almacen, as: 'almacen', attributes: ['id', 'nombre'] },
+  { model: Clinic, as: 'clinica', attributes: ['id', 'nombre', 'nit'] },
+  { model: Medication, as: 'medicamento', attributes: ['id', 'nombre'] },
+  { model: Warehouse, as: 'almacen', attributes: ['id', 'nombre'] },
   { model: User, as: 'gestor', attributes: ['id', 'name', 'email'] },
 ];
 
-const create = (data: SolicitudData) => Solicitud.create(data);
+const create = (data: RequestData) => Request.create(data);
 
 const findById = (id: number) =>
-  Solicitud.findOne({ where: { id, activo: true }, include: includeRelations });
+  Request.findOne({ where: { id, activo: true }, include: includeRelations });
 
 // Solicitudes activas: no eliminadas logicamente y en un estado que aun sigue "en curso"
 const findActivas = () =>
-  Solicitud.findAll({
+  Request.findAll({
     where: { activo: true, estado: ['PENDIENTE', 'APROBADA'] },
     include: includeRelations,
   });
 
 const findHistorialPorClinica = (clinicaId: number) =>
-  Solicitud.findAll({
+  Request.findAll({
     where: { clinicaId, activo: true },
     include: includeRelations,
   });
 
 const findAll = () =>
-  Solicitud.findAll({ where: { activo: true }, include: includeRelations });
+  Request.findAll({ where: { activo: true }, include: includeRelations });
 
 const updateEstado = (id: number, estado: RequestStatus) =>
-  Solicitud.update({ estado }, { where: { id } });
+  Request.update({ estado }, { where: { id } });
 
 const softDelete = (id: number) =>
-  Solicitud.update({ activo: false }, { where: { id } });
+  Request.update({ activo: false }, { where: { id } });
 
 export default {
   create,
