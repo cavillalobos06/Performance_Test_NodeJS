@@ -37,7 +37,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Clinica'
+ *             $ref: '#/components/schemas/Clinic'
  *     responses:
  *       201: { description: Clinica creada }
  *       409: { description: NIT duplicado }
@@ -94,7 +94,7 @@ router.get(
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Clinica'
+ *             $ref: '#/components/schemas/Clinic'
  *     responses:
  *       200: { description: Clinica actualizada }
  *   delete:

@@ -34,7 +34,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Almacen'
+ *             $ref: '#/components/schemas/Warehouse'
  *     responses:
  *       201: { description: Almacen creado }
  *   get:
@@ -89,7 +89,7 @@ router.get(
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Almacen'
+ *             $ref: '#/components/schemas/Warehouse'
  *     responses:
  *       200: { description: Almacen actualizado }
  *   delete:

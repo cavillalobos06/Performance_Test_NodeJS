@@ -34,7 +34,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Medicamento'
+ *             $ref: '#/components/schemas/Medication'
  *     responses:
  *       201: { description: Medicamento creado }
  *   get:
@@ -89,7 +89,7 @@ router.get(
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Medicamento'
+ *             $ref: '#/components/schemas/Medication'
  *     responses:
  *       200: { description: Medicamento actualizado }
  *   delete:

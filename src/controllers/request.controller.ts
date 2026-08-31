@@ -50,8 +50,9 @@ export async function historialPorClinica(
   next: NextFunction,
 ): Promise<void> {
   try {
+    const clinicaId = Number(req.params.clinicaId ?? req.params.clinicId);
     res.json(
-      await requestService.historialPorClinica(Number(req.params.clinicaId)),
+      await requestService.historialPorClinica(clinicaId),
     );
   } catch (error) {
     next(error);

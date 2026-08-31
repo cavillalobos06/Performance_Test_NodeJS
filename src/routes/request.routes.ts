@@ -36,7 +36,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Solicitud'
+ *             $ref: '#/components/schemas/Request'
  *     responses:
  *       201: { description: Solicitud creada }
  *       400: { description: Inventario insuficiente }
@@ -66,7 +66,7 @@ router.get(
 
 /**
  * @swagger
- * /requests/actives:
+ * /requests/activas:
  *   get:
  *     summary: Lista las solicitudes activas (cualquier usuario autenticado)
  *     tags: [Requests]
@@ -79,7 +79,7 @@ router.get('/activas', authMiddleware, requestController.listarActivas);
 
 /**
  * @swagger
- * /requests/history/{clinicId}:
+ * /requests/history/{clinicaId}:
  *   get:
  *     summary: Consulta el historial de solicitudes de una clinica (cualquier usuario autenticado)
  *     tags: [Requests]
@@ -94,7 +94,7 @@ router.get('/activas', authMiddleware, requestController.listarActivas);
  *       200: { description: Historial de solicitudes de la clinica }
  */
 router.get(
-  '/history/:clinicId',
+  '/history/:clinicaId',
   authMiddleware,
   requestController.historialPorClinica,
 );
