@@ -27,7 +27,7 @@ const router = Router();
  * @swagger
  * /requests:
  *   post:
- *     summary: Crea una solicitud de abastecimiento (ADMINISTRATOR o GESTOR_SOLICITUDES)
+ *     summary: Crea una solicitud de abastecimiento (ADMINISTRATOR o REQUEST_MANAGER)
  *     tags: [Requests]
  *     security:
  *       - bearerAuth: []
