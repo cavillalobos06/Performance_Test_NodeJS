@@ -24,7 +24,7 @@ const router = Router();
  *               name: { type: string, example: "Ana Torres" }
  *               email: { type: string, example: "ana@riwimedicare.com" }
  *               password: { type: string, example: "clave123" }
- *               role: { type: string, enum: [ADMINISTRADOR, GESTOR_SOLICITUDES], example: "GESTOR_SOLICITUDES" }
+ *               role: { type: string, enum: [ADMINISTRADOR, GESTOR_SOLICITUDES], example: "REQUEST_MANAGER" }
  *     responses:
  *       201: { description: Usuario registrado }
  *       409: { description: El email ya esta registrado }
